@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Button } from 'react-native';
 
-export default class PlayAScreen extends Component {
+export default class PlayScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <View style={styles.PlayAContainer}>
-          <Text>PlayA -- Hello, world!</Text>
+        <View style={styles.PlayContainer}>
+          <Text>Play -- Hello, world!</Text>
           <Button
             title = "Go to Main View"
             onPress={() => navigate('Main')}
@@ -18,8 +18,8 @@ export default class PlayAScreen extends Component {
   }
 };
 
-PlayAScreen.navigationOptions = {
-  title: 'PlayA',
+PlayScreen.navigationOptions = {
+  title: 'Play',
 };
 
 const styles = StyleSheet.create({
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginHorizontal: 50,
   },
-  PlayAContainer: {
+  PlayContainer: {
     alignItems: 'center',
   },
 });

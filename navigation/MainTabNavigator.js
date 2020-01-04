@@ -6,8 +6,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/Main/Home';
 import InstructionsScreen from '../screens/Main/Instructions';
-import CreateGameScreen from '../screens/Main/CreateGame';
-// import StartGameScreen from '../screens/Main/StartGame';
+import PlayGameScreen from '../screens/Main/PlayGame';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -15,112 +14,67 @@ const config = Platform.select({
 });
 
 // HOME
-const HomeStack = createStackNavigator({
-    Links: HomeScreen,
-  },
-  config
-);
+const HomeStack = createStackNavigator({ Links: HomeScreen }, config);
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
-  tabBarIcon: ({
-    focused
-  }) => ( <
-    TabBarIcon focused = {
-      focused
-    }
-    name = {
-      Platform.OS === 'ios' ? 'ios-home' : 'md-home'
-    }
+  tabBarIcon: ({ focused, tintColor }) => ( 
+    <TabBarIcon 
+      focused={ focused }
+      name={ Platform.OS === 'ios' ? 'ios-home' : 'md-home' }
+      color={tintColor}
     />
   ),
+  tabBarOptions: { 
+    activeTintColor: '#10459f',
+    inactiveTintColor: '#3c78df',
+  }
 };
-
 HomeStack.path = '/';
 // HOME
 
 // INSTRUCTIONS
-const InstructionsStack = createStackNavigator({
-    Links: InstructionsScreen,
-  },
-  config
-);
-
+const InstructionsStack = createStackNavigator({ Links: InstructionsScreen }, config);
 InstructionsStack.navigationOptions = {
   tabBarLabel: 'Instructions',
-  tabBarIcon: ({
-    focused
-  }) => ( <
-    TabBarIcon focused = {
-      focused
-    }
-    name = {
-      Platform.OS === 'ios' ? 'ios-book' : 'md-book'
-    }
+  tabBarIcon: ({ focused, tintColor }) => ( 
+    <TabBarIcon 
+      focused={ focused }
+      name={ Platform.OS === 'ios' ? 'ios-book' : 'md-book' }
+      color={tintColor}
     />
   ),
+  tabBarOptions: { 
+    activeTintColor: '#10459f',
+    inactiveTintColor: '#3c78df',
+  }
 };
-
 InstructionsStack.path = '/instructions';
 // INSTRUCTIONS
 
 // CREATE GAME
-const CreateGameStack = createStackNavigator({
-    Links: CreateGameScreen,
-  },
-  config
-);
-
-CreateGameStack.navigationOptions = {
-  tabBarLabel: 'Create Game',
-  tabBarIcon: ({
-    focused
-  }) => ( <
-    TabBarIcon focused = {
-      focused
-    }
-    name = {
-      Platform.OS === 'ios' ? 'ios-create' : 'md-create'
-    }
+const PlayGameStack = createStackNavigator({ Links: PlayGameScreen }, config);
+PlayGameStack.navigationOptions = {
+  tabBarLabel: 'Play Game',
+  tabBarIcon: ({ focused, tintColor }) => ( 
+    <TabBarIcon 
+      focused={ focused }
+      name={ Platform.OS === 'ios' ? 'ios-create' : 'md-create' }
+      color={tintColor}
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#10459f',
+    inactiveTintColor: '#3c78df',
+  }
 };
-
-CreateGameStack.path = '/create-game';
+PlayGameStack.path = '/create-game';
 // CREATE GAME
-
-/*
-// START GAME
-const StartGameStack = createStackNavigator({
-  Links: StartGameScreen,
-},
-  config
-);
-
-StartGameStack.navigationOptions = {
-  tabBarLabel: 'Start Game',
-  tabBarIcon: ({
-    focused
-  }) => (<
-    TabBarIcon focused={
-      focused
-    }
-    name={
-      Platform.OS === 'ios' ? 'ios-link' : 'md-link'
-    }
-  />
-    ),
-};
-
-StartGameStack.path = '/create-game';
-// START GAME
-*/
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   InstructionsStack,
-  CreateGameStack,
-  // StartGameStack,
+  PlayGameStack,
 });
 
 tabNavigator.path = '/main';
