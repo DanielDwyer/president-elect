@@ -7,7 +7,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/Main/Home';
 import InstructionsScreen from '../screens/Main/Instructions';
 import CreateGameScreen from '../screens/Main/CreateGame';
-import StartGameScreen from '../screens/Main/StartGame';
+// import StartGameScreen from '../screens/Main/StartGame';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -30,7 +30,7 @@ HomeStack.navigationOptions = {
       focused
     }
     name = {
-      Platform.OS === 'ios' ? 'ios-link' : 'md-link'
+      Platform.OS === 'ios' ? 'ios-home' : 'md-home'
     }
     />
   ),
@@ -55,7 +55,7 @@ InstructionsStack.navigationOptions = {
       focused
     }
     name = {
-      Platform.OS === 'ios' ? 'ios-link' : 'md-link'
+      Platform.OS === 'ios' ? 'ios-book' : 'md-book'
     }
     />
   ),
@@ -80,7 +80,7 @@ CreateGameStack.navigationOptions = {
       focused
     }
     name = {
-      Platform.OS === 'ios' ? 'ios-link' : 'md-link'
+      Platform.OS === 'ios' ? 'ios-create' : 'md-create'
     }
     />
   ),
@@ -89,6 +89,7 @@ CreateGameStack.navigationOptions = {
 CreateGameStack.path = '/create-game';
 // CREATE GAME
 
+/*
 // START GAME
 const StartGameStack = createStackNavigator({
   Links: StartGameScreen,
@@ -113,12 +114,13 @@ StartGameStack.navigationOptions = {
 
 StartGameStack.path = '/create-game';
 // START GAME
+*/
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   InstructionsStack,
   CreateGameStack,
-  StartGameStack,
+  // StartGameStack,
 });
 
 tabNavigator.path = '/main';

@@ -7,8 +7,8 @@ import TabBarIcon from '../components/TabBarIcon';
 import GameDashboard from '../screens/Game/GameDashboard';
 import PlayerDashboard from '../screens/Game/PlayerDashboard';
 import PlayA from '../screens/Game/PlayA';
-import PlayB from '../screens/Game/PlayB';
-import PlayC from '../screens/Game/PlayC';
+// import PlayB from '../screens/Game/PlayB';
+// import PlayC from '../screens/Game/PlayC';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -31,7 +31,7 @@ GameDashboardStack.navigationOptions = {
       focused
     }
     name = {
-      Platform.OS === 'ios' ? 'ios-link' : 'md-link'
+      Platform.OS === 'ios' ? 'ios-cube' : 'md-cube'
     }
     />
   ),
@@ -56,7 +56,7 @@ PlayerDashboardStack.navigationOptions = {
       focused
     }
     name = {
-      Platform.OS === 'ios' ? 'ios-link' : 'md-link'
+      Platform.OS === 'ios' ? 'ios-person' : 'md-person'
     }
     />
   ),
@@ -81,7 +81,7 @@ PlayAStack.navigationOptions = {
       focused
     }
     name = {
-      Platform.OS === 'ios' ? 'ios-link' : 'md-link'
+      Platform.OS === 'ios' ? 'ios-play' : 'md-play'
     }
     />
   ),
@@ -90,6 +90,7 @@ PlayAStack.navigationOptions = {
 PlayAStack.path = '/play-a';
 // PLAY A
 
+/*
 // PLAY B
 const PlayBStack = createStackNavigator({
     Links: PlayB,
@@ -139,14 +140,15 @@ PlayCStack.navigationOptions = {
 
 PlayCStack.path = '/play-a';
 // PLAY C
+*/
 
 
 const tabNavigator = createBottomTabNavigator({
   GameDashboardStack,
   PlayerDashboardStack,
   PlayAStack,
-  PlayBStack,
-  PlayCStack,
+  // PlayBStack,
+  // PlayCStack,
 });
 
 tabNavigator.path = '/game';
