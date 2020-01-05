@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, View, Button } from 'react-native';
+import HomeStateSelectScreen from '../../components/HomeStateSelect';
+import { WebView } from 'react-native-webview';
 
 export default class GameDashboardScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
+        <View>
+          <HomeStateSelectScreen />
+        </View>
         <View style={styles.GameDashboardContainer}>
           <Text>GameDashboard -- Hello, world!</Text>
           <Button
@@ -27,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
-    marginHorizontal: 50,
+    // marginHorizontal: 50,
   },
   GameDashboardContainer: {
     alignItems: 'center',
