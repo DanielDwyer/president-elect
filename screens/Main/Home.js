@@ -56,6 +56,7 @@ export default class HomeScreen extends Component {
             Press <Ionicons name="ios-create" color="#3c78df" size={25} /> Create Game to start your campaign 
           </Text>
         </View>
+        <View style={styles.verticalSpacer} />
       </ScrollView>
     );
   }
@@ -85,5 +86,8 @@ const styles = StyleSheet.create({
   },
   welcomeImageText: {
     color: '#10459f',
-  }
+  },
+  verticalSpacer:{
+    height: 100,
+  },
 });
